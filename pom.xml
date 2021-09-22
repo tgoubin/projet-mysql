@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.blagnac.coo</groupId>
+	<artifactId>projet-mysql</artifactId>
+	<version>${global.version}</version>
+
+	<properties>
+		<!-- Project version -->
+		<global.version>1.0.0-SNAPSHOT</global.version>
+		
+		<!-- General encoding -->
+		<encoding>UTF-8</encoding>
+		
+		<!-- Java version -->
+		<java.version>8</java.version>
+		
+		<!-- Dependencies versions -->
+		<mysql.connector.version>8.0.24</mysql.connector.version>
+		
+		<!-- Plugins versions -->
+		<maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+		<maven.jar.plugin.version>3.1.0</maven.jar.plugin.version>
+		
+		<!-- Encodings -->
+		<project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
+		<project.build.outputEncoding>${encoding}</project.build.outputEncoding>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<!-- MySQL driver -->
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.connector.version}</version>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<!-- To set Java version for compilation -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin.version}</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
